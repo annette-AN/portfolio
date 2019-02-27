@@ -1,0 +1,306 @@
+@import "fonts/eleganticons";
+
+body {
+    background-color: #F9F9FB;
+}
+
+.master-top {
+    height:5px;
+    background-color: #4BBABC;
+}
+
+.master-header.jumbotron {
+     padding: 0px;
+    margin: 0px;
+    background-color: #494D55;
+}
+
+.master-header > .container {
+    padding-top: 70px;
+    padding-bottom: 60px;
+    text-align: center;
+    margin: 0px auto;
+
+        > .jumbotron-heading {
+            color: #4BBABC;
+            font-weight: normal;
+        }
+        
+        strong { /*완 강조하는 의미인 strong으로 적용*/
+                color: white;
+                font-weight: bolder;
+        }
+
+        .text-light { /*완 span을 이용해서 처리*/
+             font-weight: 100;
+        }
+
+        .lead.text-muted {
+            max-width: 540px; /*완 540이상으로 안늘어나고 그 이하로는 센터 유지하면서 줄어듬*/ 
+            color: #E4E4E6 !important; /*완 important라서 안먹혔음 인스펙터에서 확인가능*/
+            font-size: 20px;
+            line-height: 35px;
+            margin: 0px auto 35px auto;   
+        }
+
+}
+
+.btn.btn-light { /*sass 스타일은 묶지 못하고 개별적으로 쓰는건지*/
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    background-color: #2897DD;
+    border-color: #2897DD;
+}
+
+.btn.btn-sm {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    margin-left:0px;
+}
+
+.btn.btn-sm:hover {
+    cursor: pointer;
+    background-color:#1777BD;
+    border-color:#1777BD;
+}
+
+.btn.primary-2 {
+    background-color:#436AAF; 
+    border-color: #436AAF;
+}
+
+.btn.primary-2:hover {
+    background-color:#3D5A92; 
+    border-color: #3D5A92;
+}
+
+
+
+main > .getting {
+    margin: 70px auto;
+    max-width: 830px;
+    text-align: center;
+
+    h1 {
+        font-size: 20px;
+        color: #212529;
+    }
+
+    .lead.text-muted {
+        padding-bottom: 30px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
+
+
+main > .linklist {
+
+        .row {
+            text-align: center;
+            max-width: 860px;
+            margin: 0px auto 60px auto;
+
+            .card {
+                height: 250px;
+                margin-bottom: 30px;
+                border-color: #F0F0F0;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: #f5f5f5;
+                }
+
+                .card-body {
+
+                    >span {
+                        display:inline-block;
+                        font-size:35px;
+                        height: 50px;
+                        margin:25px auto 0px auto;
+                        transition: margin .5s;
+
+                        > img {
+                            vertical-align: top;
+                        }
+                    }
+                }
+               
+
+                h1 {
+                    font-family: "Open Sans", arial, sans-serif;
+                    margin: 15px auto 0px auto;
+                    font-size: 15px;
+                    text-align: center;
+                    color:#494D55;
+                    transition: margin .5s;
+                }
+                    
+                p {
+                    margin-top:20px;
+                    margin-bottom: 40px;
+                    font-size: 14px;
+                    text-align: center;
+                    color:#70747E;
+                    font-weight: lighter;
+                    transition: margin .5s;
+                }
+                
+                 @media (max-width: 600px) {
+                    .card-body{
+                        > span {
+                            margin-top:5px;
+                        }
+                    }
+                    h1 {
+                        margin-top:5px;
+
+                    }
+                    p {
+                        margin-top:5px;
+                        
+                    }
+                }
+                
+            } 
+        }
+}
+
+@mixin when($parent,$parent-state) {
+	@each $state in $parent-state {
+		$rep:selector-replace(&, $parent, #{$parent+$state});
+		@at-root #{$rep} {
+	        @content;
+	    }
+	}
+}
+
+.card.card-green { /*sass 스타일은 묶지 못하고 개별적으로 쓰는건지*/
+    .card-body {
+        border-top: solid 2px #7BBF83;
+
+        > span {
+            
+        }
+    }
+
+    &:hover {
+
+        .card-body h1 {
+            color:#7BBF83;
+        }
+    }
+    
+}
+
+.card.card-pink {
+    .card-body {
+        border-top: solid 2px #E55895;
+        >span {
+            color:#E55895;
+        }
+    }
+    &:hover {
+        .card-body h1 {
+            color:#E55895;
+        }
+    }
+}
+
+
+
+.card.card-skyblue {
+    .card-body {
+        border-top: solid 2px #5FBCEC;
+        
+        >span {
+            color:#5FBCEC;
+        }
+    }
+    &:hover {
+        .card-body h1 {
+            color:#5FBCEC;
+        }
+    }
+}
+
+.card.card-purple {
+    .card-body {
+        border-top: solid 2px #8746A5;
+        
+        >span {
+            color:#8746A5;
+        }
+    }
+    &:hover {
+        .card-body h1 {
+            color:#8746A5;
+        }
+    }
+}
+
+.card.card-softgreen {
+    .card-body {
+        border-top: solid 2px #4BB9BC;
+        
+        >span {
+            color:#4BB9BC;
+        }
+    }
+    &:hover {
+        .card-body h1 {
+            color:#4BB9BC;
+        }
+    }
+}
+
+.card.card-orange {
+    .card-body {
+        border-top: solid 2px #F58C3C;
+        
+        >span {
+            color:#F58C3C;
+        }
+    }
+    &:hover {
+        .card-body h1 {
+            color:#F58C3C;
+        }
+    }
+}
+
+    
+footer > .foot-content{ 
+    background-color: #26282C; 
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 10px;
+    height: 50px;
+    line-height: 50px;
+    color: #949597;
+
+    > p {
+        margin-bottom: 0px;
+
+        a {
+            color: #4BB9BC;
+            font-weight: lighter;
+
+            &:hover {
+                color: #4BB9BC;
+                text-decoration: underline;
+            }
+        }
+    }
+}
